@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dare Cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Dare Event: Pick Your Challenge!</h1>
+    </header>
+
+    <!-- Grid of Cards -->
+    <div class="cards-container">
+        <div class="cards-grid">
+            <div class="card" data-dare="Do 10 push-ups">🎲</div>
+            <div class="card" data-dare="Sing a song">🎲</div>
+            <div class="card" data-dare="Dance for 30 seconds">🎲</div>
+            <div class="card" data-dare="Tell a joke">🎲</div>
+            <div class="card" data-dare="Act like an animal">🎲</div>
+            <div class="card" data-dare="Do a funny face">🎲</div>
+            <div class="card" data-dare="Mimic a celebrity">🎲</div>
+            <div class="card" data-dare="Do 20 jumping jacks">🎲</div>
+            <div class="card" data-dare="Recite a poem">🎲</div>
+        </div>
+    </div>
+
+    <!-- Overlay and Display Card -->
+    <div class="overlay" id="overlay">
+        <div class="display-card" id="displayCard">
+            <p id="dareText"></p>
+            <button id="closeButton">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

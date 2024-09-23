@@ -1,0 +1,146 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    margin-top: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #333;
+    font-size: 2.5rem;
+}
+
+/* Container to ensure cards stay centered and proportional */
+.cards-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* Responsive Grid of Cards */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 1200px;
+    justify-items: center;
+}
+
+/* Card Styles */
+.card {
+    background-color: #00796b;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    background-image: url('https://example.com/card-back.jpg'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 3/4; /* Ensures cards remain proportional */
+    width: 100%;
+    max-width: 200px; /* Maximum size to keep proportion */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:before {
+    content: "Pick Me!";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1rem;
+    color: #fff;
+    opacity: 0.7;
+}
+
+/* Overlay for Displaying Selected Card */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    z-index: 1;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Display Card that shows in the center */
+.display-card {
+    background-color: #fff;
+    color: #333;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.5s ease;
+}
+
+.display-card.active {
+    transform: scale(1);
+}
+
+#dareText {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#closeButton {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#closeButton:hover {
+    background-color: #004d40;
+}
+
+/* Ensure footer is aligned properly below content */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+}
