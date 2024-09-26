@@ -4,24 +4,48 @@
     padding: 0;
     box-sizing: border-box;
 }
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1; /* Keeps the video in the background */
+}
+video {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    min-width: 70%;
+    min-height: 70%;
 
+    /* transform: translate(-50%, -50%); */
+    /* object-fit: cover; Ensures the video covers the entire background */
+    z-index: -1;
+}
 html, body {
     height: 100%;
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
+      /* position: relative;
+      z-index: -1; */
 }
 
 /* Header Styles */
 header {
-    margin-top: 20px;
+    margin-top: 60px;
     text-align: center;
+       z-index: 10;
+    
 }
 
 header h1 {
-    color: #333;
+    color: #ffffff;
     font-size: 2.5rem;
+   
 }
 
 /* Container to ensure cards stay centered and proportional */
@@ -31,27 +55,33 @@ header h1 {
     align-items: center;
     justify-content: center;
     margin: 20px 0;
+       z-index: 1; 
 }
 
 /* Responsive Grid of Cards */
 .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1.6fr)); */
+       grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 20px;
     width: 80%;
-    max-width: 1200px;
+    max-width: 600px;
     justify-items: center;
+  margin-top: 10px;
 }
 
 /* Card Styles */
 .card {
-    background-color: #00796b;
-    color: #fff;
+    background-color: #64b4fb8f;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     cursor: pointer;
     border-radius: 15px;
     transition: transform 0.3s ease, background-color 0.3s ease;
@@ -59,17 +89,19 @@ header h1 {
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    aspect-ratio: 3/4; /* Ensures cards remain proportional */
+    aspect-ratio: 3/4;  /* Ensures cards remain proportional */
     width: 100%;
-    max-width: 200px; /* Maximum size to keep proportion */
+    max-width: 550px; 
+    padding: 10px;
+    /* opacity: 70%; */
 }
 
 .card:hover {
     transform: scale(1.05);
 }
-
+ 
 .card:before {
-    content: "Pick Me!";
+    content: "Pick Me!"; 
     position: absolute;
     top: 10px;
     left: 50%;
@@ -103,37 +135,48 @@ header h1 {
 
 /* Display Card that shows in the center */
 .display-card {
+    height:400px;
+    width: 500px;
     background-color: #fff;
+     
     color: #333;
     padding: 50px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     transform: scale(0.8);
     transition: transform 0.5s ease;
+  
+
 }
 
 .display-card.active {
     transform: scale(1);
+    
 }
 
 #dareText {
-    font-size: 2rem;
+    font-size: 4.5rem;
     margin-bottom: 20px;
 }
 
 #closeButton {
     padding: 10px 20px;
-    font-size: 1rem;
-    background-color: #00796b;
+    font-size: 1.5rem;
+    background-color: #2ac1fc;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 20px;
 }
 
 #closeButton:hover {
-    background-color: #004d40;
+    background-color: #2f093b;
 }
 
 /* Ensure footer is aligned properly below content */
