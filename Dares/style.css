@@ -101,7 +101,6 @@ header h1 {
 }
  
 .card:before {
-    content: "Pick Me!"; 
     position: absolute;
     top: 10px;
     left: 50%;
